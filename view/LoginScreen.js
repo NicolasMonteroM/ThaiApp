@@ -1,19 +1,22 @@
 
  class LoginScreen {
 
+	userName = "";
+	userPassword = "";
+	arrayInputs = [];
 
 
 	 constructor() {
-        
-        var userName = "";
-		var userPassword = "";
-		this.userName = userName
-        this.userPassword = userPassword
-		var arrayInputs = new Input(this,this);
+
 		var incrementPosY = 0;
-		this.arrayInputs = arrayInputs;
-		for (var i = 0; i < arrayInputs.length; i++) {
-			arrayInputs[i]  = new Input(200, 250+incrementPosY);
+
+		for (var i = 0; i < 2; i++) {
+			if(i == 0){
+				this.arrayInputs[i]  = new Input(200, 250+incrementPosY, "text");
+			}
+			if(i == 1){
+				this.arrayInputs[i]  = new Input(200, 250+incrementPosY, "pass");
+			}
 			incrementPosY+=50;
 		}
 	}
@@ -21,17 +24,9 @@
 	
 	
 
-	 paint( ) {
-		for (var i = 0; i < this.arrayInputs.length; i++) {
-			this.arrayInputs[i].paint();
-			if(i != 1) {
-				this.arrayInputs[0].displayText();
-			} else {
-				this.arrayInputs[1].displayPassword();
-			}
-		}
+	 paint( ) { //fin
 		
-
+		fill(0);
 		rect(200,350,200,30);
 		fill(255);
 		text("Iniciar Sesion",200+50,350+15);
@@ -40,9 +35,14 @@
 		rect(200,550,200,30);
 		fill(255);
 		text("Crear Usuario",200+50,550+15);
+
+		
+		for (var i = 0; i < this.arrayInputs.length; i++) {
+			this.arrayInputs[i].paint();
+		}
 	}
 
-	 focusInputs( mouseX,  mouseY) {
+	 focusInputs(mouseX,  mouseY) {//nice
 		for (var i = 0; i < this.arrayInputs.length; i++) {
 			if (mouseX >= this.arrayInputs[i].getPosX() && mouseX <= this.arrayInputs[i].getPosX() + 200
 					&& mouseY >= this.arrayInputs[i].getPosY() && mouseY <= this.arrayInputs[i].getPosY() + 30) {
@@ -53,23 +53,27 @@
 		}
 	}
 
-	 writeTextInput( key) {
+	 writeTextInput(key) { //NICE
+		 console.log("Holiwis");
 		for (var i = 0; i < this.arrayInputs.length; i++) {
-			if (this.arrayInputs[i].isFocus() && this.arrayInputs[i].getText().length()<18) {
+			if (this.arrayInputs[i].isFocus()) {
 				this.arrayInputs[i].setText(this.arrayInputs[i].getText() + key);
 			}
 		}
-		this.userName= this.arrayInputs[0].getText();
-		this.userPassword= this.arrayInputs[1].getText();
+
+		this.userName = this.arrayInputs[0].getText();
+		this.userPassword = this.arrayInputs[1].getText();
 		
 	}
 
 	eraseTextInput() {
+		console.log("Putos");
 		
 		for (var i = 0; i < this.arrayInputs.length; i++) {
-			if (this.arrayInputs[i].isFocus() && this.arrayInputs[i].getText().length()-1>=0) {
-				var indice = this.arrayInputs[i].getText().length() - 1;
+			if (this.arrayInputs[i].isFocus() ) {
+				var indice = this.arrayInputs[i].getText().length - 1;
 				this.arrayInputs[i].setText(this.arrayInputs[i].getText().substring(0, indice));
+				console.log(indice);
 			}
 		}
 		

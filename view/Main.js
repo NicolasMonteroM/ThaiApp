@@ -6,14 +6,16 @@
 	var loginScreen;
 	var registerScreen;
 	var user;
+	var menu;
 	
 
 	function setup() {
-        createCanvas(600,600);
+        createCanvas(375,812);
 		screen = 0;
 		loginScreen = new LoginScreen ();
 		registerScreen = new RegisterScreen ();
 		user = new User();
+		menu = new Menu();
 	}
 
 	function draw() {
@@ -27,6 +29,7 @@
 		case 1:
 			fill(0);
 			text("puto juan",300,300);
+			menu.paint();
 			break;
 		case 2:
 			registerScreen.paint();
@@ -37,37 +40,42 @@
 			break;
 		}
 		
-	//	console.log(loginScreen.userName);
-	//	console.log(loginScreen.userPassword);
+	//console.log(loginScreen.userName);
+	//console.log(loginScreen.userPassword);
 
-		
 	}
 	
 	function keyPressed() {
-		if(key!=BACKSPACE) {
-			loginScreen.writeTextInput(key);
+
+		if(keyCode != BACKSPACE) {	
+				loginScreen.writeTextInput(key);
 		}else {
 			loginScreen.eraseTextInput();
 		}
 		
-		if(key!=BACKSPACE) {
+		if(keyCode!=BACKSPACE) {
 			registerScreen.writeTextInput(key);
 		}else {
 			registerScreen.eraseTextInput();
 		}
 	}
 	
-	function mousePressed() {
-		loginScreen.focusInputs(mouseX, mouseY);
-		registerScreen.focusInputs(mouseX, mouseY);
-		if((mouseX>200 & mouseX<400 & mouseY>350 & mouseY<380) & user.login(loginScreen.userName,loginScreen.userPassword)) {
+	function mouseClicked() {
+		loginScreen.focusInputs(mouseX, mouseY); // funciona el focus
+		registerScreen.focusInputs(mouseX, mouseY); //funciona el focus
+
+		if(((mouseX>200 & mouseX<400 & mouseY>350 & mouseY<380) & user.login(loginScreen.userName,loginScreen.userPassword)) || (mouseX>200 & mouseX<400 & mouseY>550 & mouseY<580 & registerScreen.confirmedP(registerScreen.password,registerScreen.confirmedPassword) & screen==2) ) {
 			screen=1;
-		}
+		} // finciona el iniciar sesión
+
 		if((mouseX>200 & mouseX<400 & mouseY>550 & mouseY<580) ) {
 			screen=2;
-		}
+		} // funciona el querer crear usuario
 		
-		
+	}
+
+	function mouseMoved() {
+		menu.focusBotton(mouseX,mouseY);
 	}
 
 

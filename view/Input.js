@@ -2,15 +2,15 @@
  class Input {
 
  
+	focus = false;
+	text = "";
+	type = null;
 	
 
-	 constructor (  posX, posY) {
+	 constructor (posX, posY, type) {
         this.posX = posX;
         this.posY = posY;
-        var focus = false;
-		var text = "";
-		this.text = text;
-		this.focus = focus;
+		this.type = type;
 	}
 	
 	 paint() {
@@ -20,11 +20,17 @@
 		}else {
 			stroke(0);
 		}
+
 		fill(255);
 		rect(this.posX,this.posY,200,30);
-		
-		
 		noStroke();
+
+		if(this.type == "text"){	
+			this.displayText();
+		}
+		if(this.type == "pass"){
+			this.displayPassword();
+		}
 		
 	}
 	
@@ -32,21 +38,23 @@
 		fill(0);
 		textSize(16);
 		text(this.text,this.posX+10,this.posY+20);
+		noFill();
 	}
 	
 	 displayPassword() {
 		var codeSecure = new String();
-		for (var i = 0; i < this.text.length(); i++) {
+		for (var i = 0; i < this.text.length; i++) {
 			codeSecure += "*";
 		}
 		
 		fill(0);
 		textSize(16);
 		text(codeSecure,this.posX+10,this.posY+20);
+		noFill();
 	}
 	
 	 getPosX() {
-		return posX;
+		return this.posX;
 	}
 
 	 setPosX( posX) {
@@ -54,7 +62,7 @@
 	}
 
 	 getPosY() {
-		return posY;
+		return this.posY;
 	}
 
 	 setPosY( posY) {
@@ -62,7 +70,7 @@
 	}
 
 	 isFocus() {
-		return focus;
+		return this.focus;
 	}
 
 	 setFocus( focus) {
@@ -70,10 +78,10 @@
 	}
 
 	 getText() {
-		return text;
+		return this.text;
 	}
 
-	 setText( text) {
+	 setText(text) {
 		this.text = text;
 	}
 
