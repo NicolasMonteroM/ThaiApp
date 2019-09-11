@@ -19,7 +19,7 @@
 	}
 
 	function draw() {
-		background(255);
+		background(0);
 		
 		switch(screen) {
 		case 0:

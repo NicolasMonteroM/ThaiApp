@@ -1,7 +1,6 @@
 
  class Input {
-
- 
+	
 	focus = false;
 	text = "";
 	type = null;

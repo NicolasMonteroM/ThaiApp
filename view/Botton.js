@@ -11,7 +11,7 @@ class Botton{
         
     }
 
-    paint(mouseX, mouseY) {
+    paint() {
         if (this.focus) {
             stroke(0);
             
