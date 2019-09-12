@@ -72,6 +72,23 @@
 		this.posY = posY;
 	}
 
+	getSizeX() {
+		return this.sizex;
+	}
+
+	 setSizeX( sizex) {
+		this.sizex = sizex;
+	}
+
+	 getSizeY() {
+		return this.sizey;
+	}
+
+	 setSizeY( sizey) {
+		this.sizey = sizey;
+	}
+
+
 	 isFocus() {
 		return this.focus;
 	}
