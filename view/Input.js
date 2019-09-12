@@ -6,10 +6,12 @@
 	type = null;
 	
 
-	 constructor (posX, posY, type) {
+	 constructor (posX, posY, type, sizex, sizey) {
         this.posX = posX;
         this.posY = posY;
 		this.type = type;
+		this.sizex = sizex;
+		this.sizey = sizey;
 	}
 	
 	 paint() {
@@ -22,7 +24,7 @@
 
 	
 		noFill();
-		rect(this.posX,this.posY,327,44);
+		rect(this.posX,this.posY,this.sizex,this.sizey);
 		noStroke();
 
 

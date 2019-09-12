@@ -12,12 +12,12 @@
 
 		for (var i = 0; i < 2; i++) {
 			if(i == 0){
-				this.arrayInputs[i]  = new Input(200, 250+incrementPosY, "text");
+				this.arrayInputs[i]  = new Input(25, 442+incrementPosY, "text",327,44);
 			}
 			if(i == 1){
-				this.arrayInputs[i]  = new Input(200, 250+incrementPosY, "pass");
+				this.arrayInputs[i]  = new Input(25, 442+incrementPosY, "pass",327,44);
 			}
-			incrementPosY+=50;
+			incrementPosY+=62;
 		}
 	}
 	
