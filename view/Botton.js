@@ -7,7 +7,7 @@ class Botton{
       
         this.posX = posX;
         this.posY = posY;
-    
+    //xxxxxxxxx
         
     }
 
