@@ -13,14 +13,30 @@ class Profile {
 				this.arrayBotton[i]  = new Botton(60+incrementPosX, 735,25,25,"just line");
 			}
 			incrementPosX+=115;
-		}
+    }
+    
+
+    for (var i = 0; i < 2; i++) {
+      {
+    this.dualButton[i]  = new Botton(0, 233+incrementPosY,373,54,"just line");
+  }
+  incrementPosY+=54;
+}
 
     }
 
     paint(){
 
         for (var i = 0; i < this.arrayBotton.length; i++) {
-		}
+          this.arrayBotton[i].paint();
+    }
+    
+
+    for (var i = 0; i < this.dualButton.length; i++) {
+      this.dualButton[i].paint();
+    }
+    
+    console.log("esteban universo");
     }
 
     focusBotton(mouseX,mouseY) {
@@ -31,7 +47,9 @@ class Profile {
 			} else {
 				this.arrayBotton[i].setFocus(false);
 			}
-		}
+    }
+    
+
     }
     
 }
