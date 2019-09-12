@@ -59,9 +59,9 @@ this.configurationButton = new Botton(318,148,25,25,"just line");
       
     enterConfiguration(){
       
-      if (((mouseX>=this.bottonStartSession.getPosX() && mouseX<=this.bottonStartSession.getPosX() + 327 &&
-		 mouseY>= this.bottonStartSession.getPosY() && mouseY<this.bottonStartSession.getPosY()+44) && this.user.login(this.userName,this.userPassword))){
-			 screen = 1;
+      if (((mouseX>=this.configurationButton.getPosX() && mouseX<=this.configurationButton.getPosX() + 327 &&
+		 mouseY>= this.configurationButton.getPosY() && mouseY<this.configurationButton.getPosY()+44) )){
+			 screen = 4;
      }
      
     }

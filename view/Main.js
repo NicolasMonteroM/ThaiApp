@@ -7,18 +7,19 @@
 	var registerScreen;
 	var menu;
 	var profile;
-	var mainload,regisload, perload;
+	var mainload,regisload, perload,confload;
 
 	function preload(){
 		mainload = loadImage("../data/first.png");
 		regisload = loadImage("../data/register.png");
 		perload = loadImage("../data/perfil.png");
+		confload = loadImage("../data/configuracion.png");
 	}
 
 
 	function setup() {
         createCanvas(375,812);
-		screen = 1;
+		screen = 0;
 		loginScreen = new LoginScreen ();
 		registerScreen = new RegisterScreen ();
 		menu = new Menu();
@@ -46,6 +47,11 @@
 		case 3:
 				menu.paint();
 			
+			break;
+		case 4:
+
+		image(confload,0,0);
+
 			break;
 		}
 		
@@ -79,6 +85,8 @@
 		loginScreen.enterSession();// finciona el iniciar sesión, lo manda al profile
 
 		loginScreen.enterRegister(); // funciona el querer crear usuario
+
+		profile.enterConfiguration(); //
 		
 		console.log(mouseX, mouseY);
 		console.log(loginScreen.enterRegister());
