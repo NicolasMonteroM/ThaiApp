@@ -4,6 +4,7 @@
 	userName = "";
 	userPassword = "";
 	arrayInputs = [];
+	user = new User();
 	bottonStartSession = new Botton(25,606,327,44,"just line");
 	bottonRegister  = new Botton(212,730,60,13,"alone") ;
 
@@ -31,7 +32,7 @@
 		
 		this.bottonRegister.paint();
 
-		console.log(	this.bottonRegister = new Botton(212,730,60,13,"alone"));
+	//	console.log(	this.bottonRegister = new Botton(212,730,60,13,"alone"));
 		
 		for (var i = 0; i < this.arrayInputs.length; i++) {
 			this.arrayInputs[i].paint();
@@ -73,6 +74,23 @@
 			}
 		}
 		
+	}
+
+	enterRegister() {
+		
+		if(mouseX >= this.bottonRegister.getPosX() && mouseX <= this.bottonRegister.getPosX() + 60 
+		     && mouseY >= this.bottonRegister.getPosY() && mouseY <= this.bottonRegister.getPosY() + 13 ){
+				 screen = 2;
+				 console.log("sistemas");
+		}
+	}
+
+	enterSession() {
+
+		if (((mouseX>=this.bottonStartSession.getPosX() && mouseX<=this.bottonStartSession.getPosX() + 327 &&
+		 mouseY>= this.bottonStartSession.getPosY() && mouseY<this.bottonStartSession.getPosY()+44) && this.user.login(this.userName,this.userPassword))){
+			 screen = 1;
+		 }
 	}
 
 
