@@ -36,8 +36,7 @@
 			break;
 		case 1:
 			image(perload,0,0);
-			text("puto juan",300,300);
-			
+			profile.paint();
 			break;
 		case 2:
 			image(regisload,0,0);
@@ -87,6 +86,7 @@
 
 	function mouseMoved() {
 		menu.focusBotton(mouseX,mouseY); // funciona el focus
+		profile.focusBotton(mouseX,mouseY);
 	}
 
 
