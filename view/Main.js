@@ -7,7 +7,13 @@
 	var registerScreen;
 	var user;
 	var menu;
-	
+	var mainload,regisload;
+
+	function preload(){
+		mainload = loadImage("../data/first.png");
+		regisload = loadImage("../data/register.png");
+	}
+
 
 	function setup() {
         createCanvas(375,812);
@@ -23,6 +29,7 @@
 		
 		switch(screen) {
 		case 0:
+			image(mainload,0,0);
 			loginScreen.paint();
 			
 			break;
@@ -32,6 +39,7 @@
 			menu.paint();
 			break;
 		case 2:
+			image(regisload,0,0);
 			registerScreen.paint();
 			
 			break;
@@ -72,6 +80,7 @@
 			screen=2;
 		} // funciona el querer crear usuario
 		
+		console.log(mouseX, mouseY);
 	}
 
 	function mouseMoved() {

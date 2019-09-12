@@ -20,9 +20,11 @@
 			stroke(0);
 		}
 
-		fill(255);
-		rect(this.posX,this.posY,200,30);
+	
+		noFill();
+		rect(this.posX,this.posY,327,44);
 		noStroke();
+
 
 		if(this.type == "text"){	
 			this.displayText();
@@ -35,7 +37,7 @@
 	
 	 displayText() {
 		fill(0);
-		textSize(16);
+		textSize(20);
 		text(this.text,this.posX+10,this.posY+20);
 		noFill();
 	}
