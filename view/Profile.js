@@ -4,6 +4,7 @@ class Profile {
     configurationButton = null;
     dualButton = [];
 
+
     constructor(){
 
         var incrementPosX = 0;
@@ -23,6 +24,8 @@ class Profile {
   incrementPosY+=54;
 }
 
+this.configurationButton = new Botton(318,148,25,25,"just line");
+
     }
 
     paint(){
@@ -35,6 +38,8 @@ class Profile {
     for (var i = 0; i < this.dualButton.length; i++) {
       this.dualButton[i].paint();
     }
+
+    this.configurationButton.paint();
     
     console.log("esteban universo");
     }
@@ -48,8 +53,17 @@ class Profile {
 				this.arrayBotton[i].setFocus(false);
 			}
     }
-    
 
+    }
+
+      
+    enterConfiguration(){
+      
+      if (((mouseX>=this.bottonStartSession.getPosX() && mouseX<=this.bottonStartSession.getPosX() + 327 &&
+		 mouseY>= this.bottonStartSession.getPosY() && mouseY<this.bottonStartSession.getPosY()+44) && this.user.login(this.userName,this.userPassword))){
+			 screen = 1;
+     }
+     
     }
     
 }
