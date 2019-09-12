@@ -6,20 +6,23 @@
 	var loginScreen;
 	var registerScreen;
 	var menu;
-	var mainload,regisload;
+	var profile;
+	var mainload,regisload, perload;
 
 	function preload(){
 		mainload = loadImage("../data/first.png");
 		regisload = loadImage("../data/register.png");
+		perload = loadImage("../data/perfil.png");
 	}
 
 
 	function setup() {
         createCanvas(375,812);
-		screen = 0;
+		screen = 1;
 		loginScreen = new LoginScreen ();
 		registerScreen = new RegisterScreen ();
 		menu = new Menu();
+		profile = new Profile();
 	}
 
 	function draw() {
@@ -32,9 +35,9 @@
 			
 			break;
 		case 1:
-			fill(0);
+			image(perload,0,0);
 			text("puto juan",300,300);
-			menu.paint();
+			
 			break;
 		case 2:
 			image(regisload,0,0);
@@ -42,6 +45,7 @@
 			
 			break;
 		case 3:
+				menu.paint();
 			
 			break;
 		}
@@ -73,7 +77,7 @@
 		if( (mouseX>200 & mouseX<400 & mouseY>550 & mouseY<580 & registerScreen.confirmedP(registerScreen.password,registerScreen.confirmedPassword) & screen==2) ) {
 			screen=1;
 		} 
-		loginScreen.enterSession();// finciona el iniciar sesión
+		loginScreen.enterSession();// finciona el iniciar sesión, lo manda al profile
 
 		loginScreen.enterRegister(); // funciona el querer crear usuario
 		
