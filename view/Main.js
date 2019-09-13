@@ -100,7 +100,7 @@
 		profile.mainBottons();
 
 		configuration.enterLogin();
-
+		configuration.volver();
 		
 		
 		console.log(mouseX, mouseY);

@@ -6,7 +6,7 @@ class Configuration {
     constructor(){
 
 this.closeSessionButton = new Botton(129,313,120,13,"just line");
-this.returnButton = new Botton(13,154,13,13,"just line");
+this.returnButton = new Botton(14,52,13,13,"just line");
 
     }
 
@@ -33,13 +33,18 @@ this.returnButton = new Botton(13,154,13,13,"just line");
     enterLogin(){
       
       if (((mouseX>=this.closeSessionButton.getPosX() && mouseX<=this.closeSessionButton.getPosX() + 120 &&
-		 mouseY>= this.closeSessionButton.getPosY() && mouseY<this.closeSessionButton.getPosY()+13) )){
+		 mouseY>= this.closeSessionButton.getPosY() && mouseY<this.closeSessionButton.getPosY()+13) ) && screen==4){
 			 screen = 0;
      }
      
     }
 
     volver(){
+
+        if (((mouseX>=this.returnButton.getPosX() && mouseX<=this.returnButton.getPosX() + 120 &&
+        mouseY>= this.returnButton.getPosY() && mouseY<this.returnButton.getPosY()+13) ) && screen==4){
+            screen = 1;
+    }
 
     }
     
