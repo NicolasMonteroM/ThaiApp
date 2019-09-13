@@ -82,9 +82,7 @@
 		loginScreen.focusInputs(mouseX, mouseY); // funciona el focus
 		registerScreen.focusInputs(mouseX, mouseY); //funciona el focus
 
-		if( (mouseX>200 & mouseX<400 & mouseY>550 & mouseY<580 & registerScreen.confirmedP(registerScreen.password,registerScreen.confirmedPassword) & screen==2) ) {
-			screen=1;
-		} 
+		
 		loginScreen.enterSession();// finciona el iniciar sesión, lo manda al profile
 
 		loginScreen.enterRegister(); // funciona el querer crear usuario
