@@ -32,7 +32,7 @@ this.closeSessionButton = new Botton(129,313,120,13,"just line");
       
       if (((mouseX>=this.closeSessionButton.getPosX() && mouseX<=this.closeSessionButton.getPosX() + 120 &&
 		 mouseY>= this.closeSessionButton.getPosY() && mouseY<this.closeSessionButton.getPosY()+13) )){
-			 screen = 1;
+			 screen = 0;
      }
      
     }

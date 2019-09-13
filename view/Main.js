@@ -7,6 +7,7 @@
 	var registerScreen;
 	var menu;
 	var profile;
+	var configuration;
 	var mainload,regisload, perload,confload;
 
 	function preload(){
@@ -24,6 +25,7 @@
 		registerScreen = new RegisterScreen ();
 		menu = new Menu();
 		profile = new Profile();
+		configuration = new Configuration();
 	}
 
 	function draw() {
@@ -51,6 +53,7 @@
 		case 4:
 
 		image(confload,0,0);
+		configuration.paint();
 
 			break;
 		}
@@ -86,7 +89,9 @@
 
 		loginScreen.enterRegister(); // funciona el querer crear usuario
 
-		profile.enterConfiguration(); //
+		profile.enterConfiguration(); // funciona el querer entrar a configuracion
+
+		configuration.enterLogin();
 		
 		console.log(mouseX, mouseY);
 		console.log(loginScreen.enterRegister());
@@ -95,6 +100,7 @@
 	function mouseMoved() {
 		menu.focusBotton(mouseX,mouseY); // funciona el focus
 		profile.focusBotton(mouseX,mouseY);
+		
 	}
 
 
