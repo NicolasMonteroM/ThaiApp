@@ -1,6 +1,9 @@
 class Pedidos{
 
     pedidos = [];
+    fecha;
+    total;
+    tiempoDeEntrega;
     lastIndex;
 
     constructor (){
@@ -13,6 +16,8 @@ class Pedidos{
         }
         
         pedidos[this.lastIndex] = plato;
+        this.total = this.total + plato.precio;
+    
     }
 
 }
