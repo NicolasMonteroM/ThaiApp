@@ -7,6 +7,7 @@
 	user = new User();
 	bottonStartSession = new Botton(25,606,327,44,"just line");
 	bottonRegister  = new Botton(212,730,60,13,"alone") ;
+	
 
 	 constructor() {
 
@@ -92,6 +93,7 @@
 			 screen = 1;
 		 }
 	}
+
 
 
 	

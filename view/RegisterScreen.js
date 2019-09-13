@@ -6,6 +6,7 @@ class RegisterScreen {
 	 confirmedPassword = "";
 	 arrayInputs = [];
 	 createUser = null;
+	 arrayUsers = [];
 
 	 constructor() {
  
@@ -82,7 +83,17 @@ class RegisterScreen {
 	newUser() {
 		if( (mouseX>this.createUser.getPosX() & mouseX<this.createUser.getPosX()+327 & mouseY>this.createUser.getPosY() & mouseY<this.createUser.getPosY()+ 44 ) && this.confirmedP(this.password,this.confirmedPassword)==true ) {
 			screen=1;
-		} 
+		}
+		
+		
+	}
+
+	getArrayUsers() {
+		return this.arrayUsers;
+	}
+
+	 setText(arrayUsers) {
+		this.arrayUsers = arrayUsers;
 	}
 
 }

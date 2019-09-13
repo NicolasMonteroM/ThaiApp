@@ -65,5 +65,24 @@ this.configurationButton = new Botton(318,148,25,25,"just line");
      }
      
     }
+
+    mainBottons(){
+
+      if (((mouseX>=this.arrayBotton[0].getPosX() && mouseX<=this.arrayBotton[0].getPosX() + 327 &&
+      mouseY>= this.arrayBotton[0].getPosY() && mouseY<this.arrayBotton[0].getPosY()+44) )){
+        screen = 1;
+      }
+
+      if (((mouseX>=this.arrayBotton[1].getPosX() && mouseX<=this.arrayBotton[1].getPosX() + 327 &&
+      mouseY>= this.arrayBotton[1].getPosY() && mouseY<this.arrayBotton[1].getPosY()+44) )){
+        screen = 3;
+      }
+
+      if (((mouseX>=this.arrayBotton[2].getPosX() && mouseX<=this.arrayBotton[2].getPosX() + 327 &&
+      mouseY>= this.arrayBotton[2].getPosY() && mouseY<this.arrayBotton[2].getPosY()+44) )){
+        screen = 5;
+      }
+
+    }
     
 }

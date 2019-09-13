@@ -8,7 +8,7 @@
 	var menu;
 	var profile;
 	var configuration;
-	var mainload,regisload, perload,confload;
+	var mainload,regisload, perload,confload,pedidload;
 
 	function preload(){
 		mainload = loadImage("../data/first.png");
@@ -16,6 +16,7 @@
 		perload = loadImage("../data/perfil.png");
 		confload = loadImage("../data/configuracion.png");
 		menuload = loadImage("../data/menu.png");
+		pedidload = loadImage("../data/sinPedido.png");
 	}
 
 
@@ -51,7 +52,7 @@
 
 		case 3:
 				
-			image(menload,0,0);
+			image(menuload,0,0);
 			menu.paint();
 			break;
 
@@ -59,6 +60,10 @@
 
 			image(confload,0,0);
 			configuration.paint();
+			break;
+
+		case 5:
+			image(pedidload,0,0)
 			break;
 		}
 		
@@ -92,6 +97,7 @@
 		loginScreen.enterRegister(); // funciona el querer crear usuario
 
 		profile.enterConfiguration(); // funciona el querer entrar a configuracion
+		profile.mainBottons();
 
 		configuration.enterLogin();
 
@@ -107,5 +113,7 @@
 		profile.focusBotton(mouseX,mouseY);
 		
 	}
+
+	
 
 
