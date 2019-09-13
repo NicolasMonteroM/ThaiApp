@@ -1,17 +1,19 @@
 class Configuration {
 
     closeSessionButton = null;
-  
+    returnButton = null;
 
     constructor(){
 
 this.closeSessionButton = new Botton(129,313,120,13,"just line");
+this.returnButton = new Botton(13,154,13,13,"just line");
 
     }
 
     paint(){
 
     this.closeSessionButton.paint();
+    this.returnButton.paint();
     
     }
 
@@ -35,6 +37,10 @@ this.closeSessionButton = new Botton(129,313,120,13,"just line");
 			 screen = 0;
      }
      
+    }
+
+    volver(){
+
     }
     
 }

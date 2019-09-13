@@ -60,7 +60,7 @@ this.configurationButton = new Botton(318,148,25,25,"just line");
     enterConfiguration(){
       
       if (((mouseX>=this.configurationButton.getPosX() && mouseX<=this.configurationButton.getPosX() + 327 &&
-		 mouseY>= this.configurationButton.getPosY() && mouseY<this.configurationButton.getPosY()+44) )){
+		 mouseY>= this.configurationButton.getPosY() && mouseY<this.configurationButton.getPosY()+44) ) && screen == 1){
 			 screen = 4;
      }
      
