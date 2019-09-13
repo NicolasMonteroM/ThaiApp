@@ -1,29 +1,39 @@
 class Menu {
 
     arrayBotton = [];
-
+    menusBotton = [];
+    menusBotton2 = [];
 
     constructor(){
+        var incrementPosX2 = 0;
 
-        var incrementPosX = 0;
 
-        for (var i = 0; i < 3; i++) {
-			if(i == i){
-				this.arrayBotton[i]  = new Botton(20+incrementPosX, 500);
-			}
-			incrementPosX+=175;
+    
+    for (var i = 0; i < 2; i++) {
+				this.menusBotton[i]  = new Botton(25+incrementPosX2, 200,150,200,"just line");
+			
+			incrementPosX2+=25;
+    }
+    
+    for (var i = 0; i < 2; i++) {
+				this.menusBotton2[i]  = new Botton(25+incrementPosX2, 432,150,200, "just line");
+
+			incrementPosX2+=25;
 		}
+
 
     }
 
     paint(){
 
-        for (var i = 0; i < this.arrayBotton.length; i++) {
-            this.arrayBotton[i].paint();
-            this.arrayBotton[0].text = "Perfil";
-            this.arrayBotton[1].text = "Menu";
-            this.arrayBotton[2].text = "Orden";
-		}
+        for (var i = 0; i < this.menusBotton.length; i++) {
+            this.menusBotton[i].paint();   
+    }
+
+    for (var i = 0; i < this.menusBotton2.length; i++) {
+      this.menusBotton2[i].paint();   
+}
+    
     }
 
     focusBotton(mouseX,mouseY) {

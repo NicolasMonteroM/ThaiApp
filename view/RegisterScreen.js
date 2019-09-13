@@ -29,8 +29,8 @@ class RegisterScreen {
 		}
 
 		this.createUser.paint();
-		
 
+		
 		
 	}
 
@@ -91,7 +91,11 @@ class RegisterScreen {
 
 	saveUsers(){
 		for(var i = 0; i < this.arrayUsers.length; i++){
-			this.arrayUsers[i].getArrayUsers = this.arrayInputs[i];
+			for(var p = 0; p < this.arrayUsers.length; p++){
+			if (this.arrayUsers[p] != null){
+			this.arrayUsers[p].getArrayUsers = this.arrayInputs[i];
+			}
+		}
 		}
 	}
 
