@@ -90,9 +90,12 @@
 		profile.enterConfiguration(); // funciona el querer entrar a configuracion
 
 		configuration.enterLogin();
+
+		registerScreen.newUser();
 		
 		console.log(mouseX, mouseY);
-		console.log(loginScreen.enterRegister());
+		console.log(registerScreen.newUser());
+
 	}
 
 	function mouseMoved() {

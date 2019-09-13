@@ -13,9 +13,9 @@ class RegisterScreen {
 
 		for (var i = 0; i < 4; i++) {
 			if(i == i){
-				this.arrayInputs[i]  = new Input(200, 250+incrementPosY, "text");
+				this.arrayInputs[i]  = new Input(27, 320+incrementPosY, "text",327,44);
 			}
-			incrementPosY+=50;
+			incrementPosY+=95;
 		}
 
 		this.createUser = new Botton(28,685,327,44,"just line");
@@ -55,6 +55,8 @@ class RegisterScreen {
 		this.password= this.arrayInputs[2].getText();
 		this.confirmedPassword= this.arrayInputs[3].getText();   
 		
+		this.confirmedP(this.password,this.confirmedPassword);
+		
 	}
 
 	 eraseTextInput() {
@@ -63,6 +65,7 @@ class RegisterScreen {
 			if (this.arrayInputs[i].isFocus() ) {
 				var indice = this.arrayInputs[i].getText().length - 1;
 				this.arrayInputs[i].setText(this.arrayInputs[i].getText().substring(0, indice));
+
 			}
 		}
 		
@@ -72,14 +75,12 @@ class RegisterScreen {
 		if(password===confirmedPassword) {
 			return true;
 		} else {
-		return false;}
-		
-		
+		return false;}	
 		
 	}
 
 	newUser() {
-		if( (mouseX>this.createUser.getPosX() & mouseX<this.createUser.getPosX()+327 & mouseY>this.createUser.getPosY() & mouseY<this.createUser.getPosY()+ 44 ) && this.confirmedP==true ) {
+		if( (mouseX>this.createUser.getPosX() & mouseX<this.createUser.getPosX()+327 & mouseY>this.createUser.getPosY() & mouseY<this.createUser.getPosY()+ 44 ) && this.confirmedP(this.password,this.confirmedPassword)==true ) {
 			screen=1;
 		} 
 	}
