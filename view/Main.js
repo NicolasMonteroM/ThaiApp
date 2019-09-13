@@ -15,6 +15,7 @@
 		regisload = loadImage("../data/register.png");
 		perload = loadImage("../data/perfil.png");
 		confload = loadImage("../data/configuracion.png");
+		menuload = loadImage("../data/menu.png");
 	}
 
 
@@ -26,6 +27,7 @@
 		menu = new Menu();
 		profile = new Profile();
 		configuration = new Configuration();
+
 	}
 
 	function draw() {
@@ -35,26 +37,28 @@
 		case 0:
 			image(mainload,0,0);
 			loginScreen.paint();
-			
 			break;
+			
 		case 1:
 			image(perload,0,0);
 			profile.paint();
 			break;
+
 		case 2:
 			image(regisload,0,0);
 			registerScreen.paint();
-			
 			break;
+
 		case 3:
-				menu.paint();
-			
+				
+			image(menload,0,0);
+			menu.paint();
 			break;
+
 		case 4:
 
-		image(confload,0,0);
-		configuration.paint();
-
+			image(confload,0,0);
+			configuration.paint();
 			break;
 		}
 		
