@@ -39,7 +39,7 @@
 			image(mainload,0,0);
 			loginScreen.paint();
 			break;
-			
+
 		case 1:
 			image(perload,0,0);
 			profile.paint();
@@ -101,7 +101,7 @@
 
 		configuration.enterLogin();
 
-		registerScreen.newUser();
+		
 		
 		console.log(mouseX, mouseY);
 		console.log(registerScreen.newUser());
