@@ -10,6 +10,10 @@ constructor(nombre,descripcion,precio){
     this.precio = precio;
 }
 
+platosSelect(){
+    
+}
+
 
 
 }

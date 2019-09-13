@@ -1,8 +1,9 @@
 class Menu {
 
-    arrayBotton = [];
+
     menusBotton = [];
     menusBotton2 = [];
+    changesPlatos;
 
     constructor(){
       var incrementPosX = 0;
@@ -37,15 +38,29 @@ class Menu {
     
     }
 
-    focusBotton(mouseX,mouseY) {
-        for (var i = 0; i < this.arrayBotton.length; i++) {
-			if (mouseX >= this.arrayBotton[i].getPosX() && mouseX <= this.arrayBotton[i].getPosX() + 200
-					&& mouseY >= this.arrayBotton[i].getPosY() && mouseY <= this.arrayBotton[i].getPosY() + 30) {
-				this.arrayBotton[i].setFocus(true);
-			} else {
-				this.arrayBotton[i].setFocus(false);
-			}
-		}
+  
+
+    enterPlatos(){
+      if( (mouseX>this.menusBotton[0].getPosX() & mouseX<this.menusBotton[0].getPosX()+150 & mouseY>this.menusBotton[0].getPosY() & mouseY<this.menusBotton[0].getPosY()+ 200 ) && screen==3 ) {
+        this.changesPlatos=0;
+        console.log("putos");
+      }
+      if( (mouseX>this.menusBotton[1].getPosX() & mouseX<this.menusBotton[1].getPosX()+150 & mouseY>this.menusBotton[1].getPosY() & mouseY<this.menusBotton[1].getPosY()+ 200 ) && screen==3 ) {
+        this.changesPlatos=1;
+      }
+      if( (mouseX>this.menusBotton2[0].getPosX() & mouseX<this.menusBotton2[0].getPosX()+150 & mouseY>this.menusBotton2[0].getPosY() & mouseY<this.menusBotton2[0].getPosY()+ 200 ) && screen==3 ) {
+        this.changesPlatos=2;
+      }
+      if( (mouseX>this.menusBotton2[1].getPosX() & mouseX<this.menusBotton2[1].getPosX()+150 & mouseY>this.menusBotton2[1].getPosY() & mouseY<this.menusBotton2[1].getPosY()+ 200 ) && screen==3 ) {
+        this.changesPlatos=3;
+
+        console.log("putos");
+      }
+      
+    }
+
+    getChangesPlatos(){
+      return this.changesPlatos;
     }
 
     

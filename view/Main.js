@@ -9,6 +9,7 @@
 	var profile;
 	var configuration;
 	var mainload,regisload, perload,confload,pedidload;
+	var plaload = [4];
 
 	function preload(){
 		mainload = loadImage("../data/first.png");
@@ -17,6 +18,10 @@
 		confload = loadImage("../data/configuracion.png");
 		menuload = loadImage("../data/menu.png");
 		pedidload = loadImage("../data/sinPedido.png");
+		plaload[0] = loadImage("../data/plato1.png");
+		plaload[1] = loadImage("../data/plato2.png");
+		plaload[2] = loadImage("../data/plato3.png");
+		plaload[3] = loadImage("../data/plato4.png");
 	}
 
 
@@ -65,6 +70,22 @@
 		case 5:
 			image(pedidload,0,0)
 			break;
+
+		case 6:
+			if(menu.getChangesPlatos()==0){
+				image(plaload[0],0,0)
+			}
+			if(menu.getChangesPlatos()==1){
+				image(plaload[1],0,0)
+			}
+			if(menu.getChangesPlatos()==2){
+				image(plaload[2],0,0)
+			}
+			if(menu.getChangesPlatos()==3){
+				image(plaload[3],0,0)
+			}
+			
+				break;
 		}
 		
 	//console.log(loginScreen.userName);
@@ -101,6 +122,8 @@
 
 		configuration.enterLogin();
 		configuration.volver();
+
+		menu.enterPlatos();
 		
 		
 		console.log(mouseX, mouseY);
@@ -109,7 +132,7 @@
 	}
 
 	function mouseMoved() {
-		menu.focusBotton(mouseX,mouseY); // funciona el focus
+		
 		profile.focusBotton(mouseX,mouseY);
 		
 	}
