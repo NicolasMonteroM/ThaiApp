@@ -19,7 +19,8 @@ class RegisterScreen {
 			incrementPosY+=95;
 		}
 
-		this.createUser = new Botton(28,685,327,44,"just line");
+		this.createUser = new Botton(28,685,327,44,"alone");
+		this.arrayUsers = new User();
 	}
 	
 	paint() {
@@ -86,6 +87,12 @@ class RegisterScreen {
 		}
 		
 		
+	}
+
+	saveUsers(){
+		for(var i = 0; i < this.arrayUsers.length; i++){
+			this.arrayUsers[i].getArrayUsers = this.arrayInputs[i];
+		}
 	}
 
 	getArrayUsers() {

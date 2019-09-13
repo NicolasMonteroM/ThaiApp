@@ -11,7 +11,7 @@ class Profile {
         var incrementPosY = 0;
         for (var i = 0; i < 3; i++) {
           {
-				this.arrayBotton[i]  = new Botton(60+incrementPosX, 735,25,25,"just line");
+				this.arrayBotton[i]  = new Botton(60+incrementPosX, 735,25,25,"alone");
 			}
 			incrementPosX+=115;
     }
@@ -19,12 +19,12 @@ class Profile {
 
     for (var i = 0; i < 2; i++) {
       {
-    this.dualButton[i]  = new Botton(0, 233+incrementPosY,373,54,"just line");
+    this.dualButton[i]  = new Botton(0, 233+incrementPosY,373,54,"alone");
   }
   incrementPosY+=54;
 }
 
-this.configurationButton = new Botton(318,148,25,25,"just line");
+this.configurationButton = new Botton(318,148,25,25,"alone");
 
     }
 

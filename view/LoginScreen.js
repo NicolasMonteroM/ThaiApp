@@ -4,7 +4,7 @@
 	userName = "";
 	userPassword = "";
 	arrayInputs = [];
-	user = new User();
+	user = new User(this,this,this,this);
 	bottonStartSession = new Botton(25,606,327,44,"just line");
 	bottonRegister  = new Botton(212,730,60,13,"alone") ;
 	
