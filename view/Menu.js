@@ -5,20 +5,21 @@ class Menu {
     menusBotton2 = [];
 
     constructor(){
+      var incrementPosX = 0;
         var incrementPosX2 = 0;
 
 
     
     for (var i = 0; i < 2; i++) {
-				this.menusBotton[i]  = new Botton(25+incrementPosX2, 200,150,200,"just line");
+				this.menusBotton[i]  = new Botton(25+incrementPosX, 200,150,200,"just line");
 			
-			incrementPosX2+=25;
+			incrementPosX+=160;
     }
     
     for (var i = 0; i < 2; i++) {
 				this.menusBotton2[i]  = new Botton(25+incrementPosX2, 432,150,200, "just line");
 
-			incrementPosX2+=25;
+			incrementPosX2+=160;
 		}
 
 
@@ -46,5 +47,7 @@ class Menu {
 			}
 		}
     }
+
+    
     
 }
