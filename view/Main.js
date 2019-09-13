@@ -98,7 +98,8 @@
 		
 		
 		console.log(mouseX, mouseY);
-		console.log(loginScreen.enterRegister());
+		console.log(registerScreen.newUser());
+
 	}
 
 	function mouseMoved() {
