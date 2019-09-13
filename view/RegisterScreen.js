@@ -5,6 +5,7 @@ class RegisterScreen {
 	 password = "";
 	 confirmedPassword = "";
 	 arrayInputs = [];
+	 createUser = null;
 
 	 constructor() {
  
@@ -16,19 +17,19 @@ class RegisterScreen {
 			}
 			incrementPosY+=50;
 		}
+
+		this.createUser = new Botton(28,685,327,44,"just line");
 	}
 	
 	paint() {
 		for (var i = 0; i < this.arrayInputs.length; i++) {
 			this.arrayInputs[i].paint();
 		}
-		
-		fill(0);
-		rect(200,550,200,30);
-		fill(255);
-		text("Crear Usuario",200+50,550+15);
 
-		console.log(this.password===this.confirmedPassword);
+		this.createUser.paint();
+		
+
+		
 	}
 
 	 focusInputs( mouseX,  mouseY) {
@@ -75,6 +76,12 @@ class RegisterScreen {
 		
 		
 		
+	}
+
+	newUser() {
+		if( (mouseX>this.createUser.getPosX() & mouseX<this.createUser.getPosX()+327 & mouseY>this.createUser.getPosY() & mouseY<this.createUser.getPosY()+ 44 ) && this.confirmedP==true ) {
+			screen=1;
+		} 
 	}
 
 }
