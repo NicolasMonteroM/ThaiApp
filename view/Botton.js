@@ -11,7 +11,6 @@ class Botton{
         this.sizex = sizex;
         this.sizey = sizey;
         this.type = type;
-    //xxxxxxxxx
         
     }
 

@@ -38,7 +38,7 @@
 			image(mainload,0,0);
 			loginScreen.paint();
 			break;
-			
+
 		case 1:
 			image(perload,0,0);
 			profile.paint();
@@ -94,6 +94,8 @@
 		profile.enterConfiguration(); // funciona el querer entrar a configuracion
 
 		configuration.enterLogin();
+
+		
 		
 		console.log(mouseX, mouseY);
 		console.log(loginScreen.enterRegister());
